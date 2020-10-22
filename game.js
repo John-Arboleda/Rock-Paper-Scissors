@@ -16,33 +16,36 @@ let results = {
     }
 }
 
-let s = 0, p = 0, r = 0;
 let pcPlay = () => {
     let a = Math.random().toFixed(4);
     if (a < 1/3){
-        s++;
         return "scissors";
     } else if (a < 2/3) {
-        r++;
         return "rock";
     } else {
-        p++;
         return "paper";
     }
 }
 
-let i = 1;
+let scoreYou = 0, scorePC = 0;
 
-while (i <= 10000){
-    pcPlay();
-    i++;
+let game = (choice) => {
+    let pcChoice = pcPlay();
+    let showChoices = "Your choice = " + choice + "\n" + "PC choice = " + pcChoice + "\n"
+    if (results[choice][pcChoice] == 1){
+        scoreYou++;
+        return showChoices + "You win";
+    } else if (results[choice][pcChoice] == -1){
+        scorePC++;
+        return showChoices + "You lose";
+    } else {
+        return showChoices + "It's a tie";
+    }
 }
 
-console.log(
-    "scissors = " + s,
-    "rock = " + r,
-    "paper = " + p
-)
-
-
-
+let i = 0;
+while (i < 100){
+    console.log(game(pcPlay()));
+    console.log("Score: You = " + scoreYou + " PC " + scorePC + "\n");
+    i++;
+}
