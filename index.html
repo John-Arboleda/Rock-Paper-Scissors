@@ -7,18 +7,33 @@
 
 </head>
 <body>
+<div id="game-screen">
+    <button id="exitButton" onclick="endGame()">Exit</button>
+    <div id="youGameScore" class="gameScore">You: </div>
+    <div id="tieScore" class="gameScore">Tie: </div>
+    <div id="pcGameScore" class="gameScore">PC: </div>
+    <div id="totalScore1"></div>
+    <div id="totalScore2"></div>
+    <div id="rockPC"><img src="rock-images.jpg" alt="rock PC"></div>
+    <div id="paperPC"><img src="paper-images.jpg" alt="paper PC"></div>
+    <div id="scissorsPC"><img src="scissors-images.jpg" alt="scissors PC"></div>
+    <div id="rockYou"><img src="rock-images.jpg" alt="rock You"></div>
+    <div id="paperYou"><img src="paper-images.jpg" alt="paper You"></div>
+    <div id="scissorsYou"><img src="scissors-images.jpg" alt="scissors You"></div>
+</div>
+
 <div id="main">
-    <div id=explanation>
-        To start Select number of wins per set
+    <button id="rulesButton" onclick="rulesScreen()">Game Rules</button>
+    <div id="explanation">
+        To start select number of wins per set
     </div>
     <div id="set-buttons">
-        <button class="number-set" id="One game" value="One game">One game</button>
+        <button class="number-set" id="One game" value="One game" onclick="startGame()">One game</button>
         <button class="number-set" id="Best of Three" value="Best of Three">Best of Three</button>
         <button class="number-set" id="Best of Five" value="Best of Five">Best of Five</button>
     </div>
-
+    
 </div>
-
 
 <script type="text/javascript" src=game.js></script>
 </body>

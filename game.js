@@ -49,3 +49,11 @@ while (i < 100){
     console.log("Score: You = " + scoreYou + " PC " + scorePC + "\n");
     i++;
 }
+
+let startGame = () => {
+    document.getElementById("game-screen").style.display = "grid";
+}
+
+let endGame = () => {
+    document.getElementById("game-screen").style.display = "none";
+}

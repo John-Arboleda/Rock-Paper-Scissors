@@ -1,23 +1,148 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 0px 0px 2px gray;
 }
 
 #main{
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     text-align: center;
-    padding: 480px 30px 0;
+    padding: 30px 30px 0;
     box-sizing: border-box;
-    width: 908px;
-    height: 600px;
+    position: absolute;
+    width: 600px;
+    height: 450px;
     background-image: url("start-image.jpg");
     background-color: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: 600px 400px;
+    background-position-x: center;
+    border: 1px solid black;
+}
+
+#rulesButton{
+    position: relative;
+    left: -200px;
+    white-space: nowrap;
+}
+
+#explanation{
+    margin: 320px auto 0;
+    position: relative;
 }
 
 #set-buttons{
-    margin: 30px auto;
+    margin: 10px auto;
 }
 
 .number-set{
     margin: 0 20px;
 }
+
+#game-screen{
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    height: 450px;
+    width: 600px;
+    background-color: white;
+    z-index: 5;
+    position: absolute;
+    display: none;
+    border: 1px solid orangered;
+    grid-template-areas:
+        'exit youScore youScore tieScore tieScore pcScore pcScore'
+        'score1 rPC rPC pPC pPC sPC sPC'
+        'score1 rPC rPC pPC pPC sPC sPC'
+        'score2 rYou rYou pYou pYou sYou sYou'
+        'score2 rYou rYou pYou pYou sYou sYou';
+    grid-template-columns: 15% auto;
+    grid-template-rows: 10% auto;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+#game-screen > div{
+    border: 1px solid orangered;
+    display: flex;
+    vertical-align: middle;
+ /*   text-align: center;*/
+}
+
+#game-screen img{
+    display: block;
+    height: 150px;
+    width: 150px;
+    border: 1px solid orangered;
+    margin: auto;
+} 
+
+#exitButton{ grid-area: exit; }
+#youGameScore{ grid-area: youScore; }
+#tieScore{ grid-area: tieScore; }
+#pcGameScore{ grid-area: pcScore; }
+#totalScore1{ grid-area: score1; }
+#totalScore2{ grid-area: score2; }
+#rockPC{ 
+    grid-area: rPC; 
+}
+#paperPC{ grid-area: pPC; }
+#scissorsPC{ grid-area: sPC; }
+#rockYou{ grid-area: rYou; }
+#paperYou{ grid-area: pYou; }
+#scissorsYou{ grid-area: sYou; }
+
+/*
+#exitButton{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#youGameScore{
+    grid-row: 1;
+    grid-column: 2 / span 2;
+}
+
+#tieScore{
+    grid-row: 1;
+    grid-column: 4 / span 2;
+}
+
+#pcGameScore{
+    grid-row: 1;
+    grid-column: 6 / span 2;
+}
+
+#totalScore1{
+    grid-row: 2 / span 2;
+    grid-column: 1;
+}
+
+#totalScore2{
+    grid-row: 4 / span 2;;
+    grid-column: 1;
+}
+
+#rockPC{
+    grid-row: span 2;
+    grid-colum: span 2;
+}
+
+#paperPC{
+
+}
+#scissorsPC{
+
+}
+#rockYou{
+
+}
+#paperYou{
+
+}
+#scissorsYou{
+
+}
+*/
